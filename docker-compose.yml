@@ -11,3 +11,4 @@ services:
      - influx_bucket=influxbucket
      - influx_url=https://influx.example.com
      - influx_verify_ssl=True
+    restart: unless-stopped
