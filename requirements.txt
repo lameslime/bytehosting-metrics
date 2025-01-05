@@ -1,0 +1,4 @@
+influxdb_client
+websocket
+bs4
+requests

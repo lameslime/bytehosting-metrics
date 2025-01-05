@@ -1,0 +1,13 @@
+services:
+  meshflux:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+     - bytehosting_token=tokenbytehosting
+    #  - target_uids
+     - influx_token=tokeninflux
+     - influx_org=influxorg
+     - influx_bucket=influxbucket
+     - influx_url=https://influx.example.com
+     - influx_verify_ssl=True
