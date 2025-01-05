@@ -157,17 +157,16 @@ class EmulateArgs():
         return getattr(self, value)
 
 if __name__ == '__main__':
-    print('\n\n')
     envs = EmulateArgs()
 
     parser = argparse.ArgumentParser(description='Export bytehosting metrics to InfluxDB v2')
-    parser.add_argument('--bytehosting_token', required=True, default=envs.get_val('bytehosting_token'))
-    parser.add_argument('--target_uids', required=False, default=envs.get_val('target_uids'), help='Provide a string of UIDs to apply filters, not implemented yet')
-    parser.add_argument('--influx_token', required=True, default=envs.get_val('influx_token'))
-    parser.add_argument('--influx_org', required=True, default=envs.get_val('influx_org'))
-    parser.add_argument('--influx_bucket', required=True, default=envs.get_val('influx_bucket'))
-    parser.add_argument('--influx_url', required=True, default=envs.get_val('influx_url'), help='Full URL to IndluxDB v2, eg: https://influx.example.com')
-    parser.add_argument('--influx_verify_ssl', required=False, default=envs.get_val('influx_verify_ssl'), help='Verify Influx SSL')
+    parser.add_argument('--bytehosting_token', default=envs.get_val('bytehosting_token'))
+    parser.add_argument('--target_uids', default=envs.get_val('target_uids'), help='Provide a string of UIDs to apply filters, not implemented yet')
+    parser.add_argument('--influx_token', default=envs.get_val('influx_token'))
+    parser.add_argument('--influx_org', default=envs.get_val('influx_org'))
+    parser.add_argument('--influx_bucket', default=envs.get_val('influx_bucket'))
+    parser.add_argument('--influx_url', default=envs.get_val('influx_url'), help='Full URL to IndluxDB v2, eg: https://influx.example.com')
+    parser.add_argument('--influx_verify_ssl', default=envs.get_val('influx_verify_ssl'), help='Verify Influx SSL')
     args = parser.parse_args()
 
     main(args)

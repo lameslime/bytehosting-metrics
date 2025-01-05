@@ -1,4 +1,3 @@
 influxdb_client
-websocket
-bs4
+websocket-client
 requests

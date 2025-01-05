@@ -1,5 +1,4 @@
 import requests
-from bs4 import BeautifulSoup
 from datetime import datetime
 import json
 import time
@@ -108,7 +107,7 @@ class LiveDataWSStream:
             data = json.loads(message)
             data_queue.put(data)
             if oneshot == True:
-                print(f'[{sid}] Oneshot, stopping\n')
+                print(f'[{sid}] Oneshot, stopping')
                 self.stop_log(sid, mute_log=True)
         except json.JSONDecodeError:
             print(f"[{sid}] Failed to parse message")
