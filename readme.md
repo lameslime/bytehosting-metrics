@@ -1,4 +1,4 @@
-### Collects all sorts of data from user accessible APIs from Bytehosting and sends them to InfluxDb v2
+### Collects all sorts of data from user accessible APIs from Bytehosting and sends them to InfluxDB v2
 - Service info
 - Status
 - IP
@@ -41,4 +41,4 @@ Grafana dashboard is planned.
 
 ### Run with
 - Git clone and `docker compose up --build`
-- If runnng manually, don't forget venv (optional) and `pip install -r requirements.txt`
+- If running manually, don't forget venv (optional) and `pip install -r requirements.txt`

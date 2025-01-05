@@ -134,13 +134,6 @@ class Schedule():
         # print(data['live_data'])
         self.influx_api.service_data_send(data)
 
-def is_running_in_docker():
-    try:
-        with open("/proc/1/cgroup", "r") as f:
-            return "docker" in f.read() or "containerd" in f.read()
-    except FileNotFoundError:
-        return False
-
 import argparse
 import os
 class EmulateArgs():
