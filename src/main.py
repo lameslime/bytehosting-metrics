@@ -7,7 +7,11 @@ def main(args):
     byte_api = Bytehosting(args.bytehosting_token)
     influx_api = Influx(args.influx_url, args.influx_token, args.influx_org, args.influx_bucket, eval(args.influx_verify_ssl))
     
+    # Get active services, exit if token expired
     service_list = byte_api.get_service_list()
+    if 'error' in service_list:
+        print('Session token expired, exiting')
+        exit()
     
     # Create objects from service
     service_list_objects = {}
