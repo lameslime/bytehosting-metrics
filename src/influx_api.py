@@ -92,7 +92,7 @@ class Influx() :
                     json_body['tags'] = tags
                     json_body['tags']['traffic_type'] = 'current'
                     json_body['fields'] = {}
-                    json_body['fields']['current_gb'] = float(record['current'])
+                    json_body['fields']['current_gb'] = float(record['current'].replace(',', ''))
                     json_body['fields']['max_allowed_gb'] = int(record['max']) * 1000 # Reported as TB
                     json_body['fields']['percentage'] = float(record['percentage'])
 

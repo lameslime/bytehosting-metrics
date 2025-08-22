@@ -115,6 +115,10 @@ class LiveDataWSStream:
 
     def on_error(self, ws, error, sid):
         print(f"[{sid}] WebSocket Error: {error}")
+        try:
+            self.stop_log(sid, mute_log=True)
+        except Exception as e:
+            print(f"[{sid}] Error closing WebSocket: {e}")
 
     def on_open(self, ws, sid):
         # print(f"[{sid}] WebSocket connection opened.")
